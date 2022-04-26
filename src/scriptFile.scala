@@ -1,0 +1,1 @@
+def or(x:Boolean,y: =>Boolean) = if(x) true else y

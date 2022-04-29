@@ -11,11 +11,11 @@ class Rational(x: Int, y: Int) {
 
   def denom = y
 
-  def less(that: Rational) = numer * that.denom < that.numer * denom
+  def < (that: Rational) = numer * that.denom < that.numer * denom
 
-  def max(that: Rational) = if (less(that)) that else this
+  def max(that: Rational) = if (this < that) that else this
 
-  def add(that: Rational) =
+  def + (that: Rational) =
     new Rational(
       numer * that.denom + that.numer * denom,
       denom * that.denom
@@ -26,8 +26,7 @@ class Rational(x: Int, y: Int) {
     numer/g + "/" + denom/g
   }
 
-  def neg: Rational = new Rational(-numer, denom)
+  def unary_- : Rational = new Rational(-numer, denom)
 
-  def sub(that: Rational) = add(that.neg)
-
+  def - (that: Rational) = this + -that
 }

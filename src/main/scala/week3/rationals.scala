@@ -9,9 +9,9 @@ object rationals extends App {
 
   println(x.numer)
   println(x.denom)
-  println(x.add(y))
-  println(x.sub(y).sub(z))
-  println(y.add(y))
-  println(x.less(y))
-  println(x.max(y))
+  println(x + y)
+  println(x - y - z)
+  println(y + y)
+  println(x < y)
+  println(x max y)
 }

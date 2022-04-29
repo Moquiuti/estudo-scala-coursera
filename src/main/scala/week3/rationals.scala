@@ -11,4 +11,7 @@ object rationals extends App {
   println(x.denom)
   println(x.add(y))
   println(x.sub(y).sub(z))
+  println(y.add(y))
+  println(x.less(y))
+  println(x.max(y))
 }

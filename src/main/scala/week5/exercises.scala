@@ -30,7 +30,11 @@ object exercises extends App {
    * @param xs
    * @return
    */
-  def flatten(xs: List[Any]): List[Any] = ???
+  def flatten(xs: List[Any]): List[Any] = xs match {
+    case List() => List()
+    case (y :: ys) :: yss => flatten(y :: ys) ::: flatten(yss)
+    case y :: ys => y :: flatten(ys)
+  }
 
   println(flatten(List(List(1, 1), 2, List(3, List(5, 8))))) // res0: List[Any] = List(1, 1, 2, 3, 5, 8)
 }

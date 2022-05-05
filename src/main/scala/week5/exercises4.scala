@@ -33,4 +33,12 @@ object exercises4 extends App {
 
   println(msort(nums))
   println(msort(fruits))
+
+  print(nums filter( x => x > 0))
+  println(nums filterNot(x => x > 0))
+  println(nums partition (x => x > 0))
+
+  println(nums takeWhile  (x => x > 0))
+  println(nums dropWhile  (x => x > 0))
+  println(nums span  (x => x > 0))
 }

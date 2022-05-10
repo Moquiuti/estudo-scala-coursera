@@ -33,7 +33,7 @@ object exercises7 extends App {
    * @tparam T
    * @return
    */
-  def concat[T](xs: List[T], ys: List[T]): List[T] =
+  def concat2[T](xs: List[T], ys: List[T]): List[T] =
     (xs foldRight ys) (_ :: _)
 
   /**
@@ -50,7 +50,9 @@ object exercises7 extends App {
    * @return
    */
   def mapFun[T, U](xs: List[T], f: T => U): List[U] =
-    (xs foldRight List[U]()) (???)
+    (xs foldRight List[U]()) ( f(_)::_ )
+
+  println(mapFun[Int, Int](List(1,2,3), x => x * x))
 
   /**
    *
@@ -59,6 +61,9 @@ object exercises7 extends App {
    * @return
    */
   def lengthFun[T](xs: List[T]): Int =
-    (xs foldRight 0) (???)
+    (xs foldRight 0) ( (x,y) => 1 + y )
+
+  println(lengthFun(List(1,2,3,4,5,4,3,2,1)))
+
 }
 

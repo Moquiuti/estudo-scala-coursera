@@ -1,6 +1,12 @@
 package week6
 
 object nqueens extends App {
+  /**
+   * Coloque rainhas em cada linha do tabuleiro de xadrez,
+   * de modo que nenhuma das rainhas seja ameaçada por outra.
+   * @param n
+   * @return
+   */
   def queens(n: Int): Set[List[Int]] = {
     def placeQueens(k: Int): Set[List[Int]] =
       if (k == 0) Set(List())
@@ -28,5 +34,5 @@ object nqueens extends App {
         yield Vector.fill(queens.length)("* ").updated(col, "X ").mkString
     "\n" + (lines mkString ("\n"))
   }
-  print(queens(4) map show)
+  print(queens(8) take 3 map show mkString("\n"))
 }
